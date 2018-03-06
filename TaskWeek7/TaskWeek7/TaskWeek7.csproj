@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="AudioManager.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="InputEngine.cs" />
     <Compile Include="Loader.cs" />
+    <Compile Include="MenuOption.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -55,12 +57,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Sounds\0.wav" />
+    <Content Include="Content\Sounds\1.wav" />
+    <Content Include="Content\Sounds\2.wav" />
+    <Content Include="Content\Sounds\3.wav" />
+    <Content Include="Content\Sounds\4.wav" />
+    <Content Include="Content\Textures\0.png" />
+    <Content Include="Content\Textures\1.png" />
+    <Content Include="Content\Textures\2.png" />
+    <Content Include="Content\Textures\3.png" />
+    <Content Include="Content\Textures\4.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

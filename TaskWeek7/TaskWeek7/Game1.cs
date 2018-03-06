@@ -1,6 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using collectables;
+using AudioPlayer;
+using Microsoft.Xna.Framework.Audio;
+using System.Collections.Generic;
+using System;
+using Engine.Engines;
 
 namespace TaskWeek7
 {
@@ -11,6 +17,11 @@ namespace TaskWeek7
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        SoundEffectInstance player;
+        Dictionary<string, Texture2D> allTextures;
+        
+        List<MenuOption> allMenuOptions = new List<MenuOption>();
+        
 
         public Game1()
         {
@@ -27,7 +38,8 @@ namespace TaskWeek7
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            new InputEngine(this);
+            IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -39,7 +51,10 @@ namespace TaskWeek7
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            allTextures = Loader.ContentLoad<Texture2D>(this.Content, "Textures");
+            AudioManager.SoundEffects = Loader.ContentLoad<SoundEffect>(this.Content, "Sounds");
+            createMenuoptions();
+            player = null;
             // TODO: use this.Content to load your game content here
         }
 
@@ -64,6 +79,8 @@ namespace TaskWeek7
 
             // TODO: Add your update logic here
 
+
+            
             base.Update(gameTime);
         }
 
@@ -76,8 +93,19 @@ namespace TaskWeek7
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            foreach (MenuOption item in allMenuOptions)
+            {
+                item.Draw(spriteBatch);
+            }
             base.Draw(gameTime);
+        }
+
+        private void createMenuoptions()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                allMenuOptions.Add(new MenuOption(i.ToString(),allTextures[i.ToString()], new Vector2(20, i * 100)));
+            }
         }
     }
 }
