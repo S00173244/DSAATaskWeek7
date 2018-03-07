@@ -19,8 +19,8 @@ namespace TaskWeek7
         SpriteBatch spriteBatch;
         SoundEffectInstance player;
         Dictionary<string, Texture2D> allTextures;
+        Dictionary<string, MenuOption> allMenuOptions;
         
-        List<MenuOption> allMenuOptions = new List<MenuOption>();
         
 
         public Game1()
@@ -79,9 +79,9 @@ namespace TaskWeek7
 
             // TODO: Add your update logic here
 
-            foreach (MenuOption item in allMenuOptions)
+            for (int i = 0; i < allMenuOptions.Count; i++)
             {
-                item.Update();
+                allMenuOptions[i.ToString()].Update();
             }
             
             base.Update(gameTime);
@@ -96,9 +96,11 @@ namespace TaskWeek7
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            foreach (MenuOption item in allMenuOptions)
+
+
+            for (int i = 0; i < allMenuOptions.Count; i++)
             {
-                item.Draw(spriteBatch);
+                allMenuOptions[i.ToString()].Draw(spriteBatch);
             }
             base.Draw(gameTime);
         }
@@ -106,8 +108,8 @@ namespace TaskWeek7
         private void createMenuoptions()
         {
             for (int i = 0; i < 5; i++)
-            {
-                allMenuOptions.Add(new MenuOption(i.ToString(),allTextures[i.ToString()], new Vector2(20, i * 100)));
+            {                
+                allMenuOptions.Add(i.ToString(),new MenuOption(i.ToString(),allTextures[i.ToString()], new Vector2(20, i * 100)));
             }
         }
     }
