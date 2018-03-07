@@ -57,16 +57,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Sounds\10.wav" />
+    <Content Include="Content\Sounds\11.wav" />
+    <Content Include="Content\Sounds\12.wav" />
+    <Content Include="Content\Sounds\13.wav" />
+    <Content Include="Content\Sounds\5.wav" />
     <Content Include="Content\Sounds\0.wav" />
+    <Content Include="Content\Sounds\6.wav" />
     <Content Include="Content\Sounds\1.wav" />
+    <Content Include="Content\Sounds\8.wav" />
     <Content Include="Content\Sounds\2.wav" />
+    <Content Include="Content\Sounds\7.wav" />
     <Content Include="Content\Sounds\3.wav" />
+    <Content Include="Content\Sounds\9.wav" />
     <Content Include="Content\Sounds\4.wav" />
     <Content Include="Content\Textures\0.png" />
     <Content Include="Content\Textures\1.png" />
+    <Content Include="Content\Textures\10.png" />
+    <Content Include="Content\Textures\11.png" />
+    <Content Include="Content\Textures\12.png" />
+    <Content Include="Content\Textures\13.png" />
     <Content Include="Content\Textures\2.png" />
     <Content Include="Content\Textures\3.png" />
     <Content Include="Content\Textures\4.png" />
+    <Content Include="Content\Textures\5.png" />
+    <Content Include="Content\Textures\6.png" />
+    <Content Include="Content\Textures\7.png" />
+    <Content Include="Content\Textures\8.png" />
+    <Content Include="Content\Textures\9.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

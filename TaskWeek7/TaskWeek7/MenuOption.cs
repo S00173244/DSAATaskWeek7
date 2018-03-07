@@ -18,19 +18,24 @@ namespace TaskWeek7
         public Vector2 pos;
         public Rectangle bounds;
         SoundEffectInstance player = null;
-        
+     
         public MenuOption(string SoundKey, Texture2D Texture, Vector2 Position)
         {
             soundKey = SoundKey;
             texture = Texture;
             pos = Position;
             bounds = new Rectangle(pos.ToPoint().X,pos.ToPoint().Y,texture.Width,texture.Height);
+            
         }
 
-        public void Update()
+
+        public void Update(GameTime gametime)
         {
+            
 
             PlaySound();
+
+            
         }
 
 

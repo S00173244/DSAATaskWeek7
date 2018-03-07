@@ -19,7 +19,7 @@ namespace TaskWeek7
         SpriteBatch spriteBatch;
         SoundEffectInstance player;
         Dictionary<string, Texture2D> allTextures;
-        Dictionary<string, MenuOption> allMenuOptions;
+        Dictionary<string, MenuOption> allMenuOptions = new Dictionary<string, MenuOption>();
         
         
 
@@ -79,11 +79,12 @@ namespace TaskWeek7
 
             // TODO: Add your update logic here
 
+
             for (int i = 0; i < allMenuOptions.Count; i++)
             {
-                allMenuOptions[i.ToString()].Update();
+                allMenuOptions[i.ToString()].Update(gameTime);
             }
-            
+
             base.Update(gameTime);
         }
 
@@ -107,9 +108,22 @@ namespace TaskWeek7
 
         private void createMenuoptions()
         {
-            for (int i = 0; i < 5; i++)
-            {                
-                allMenuOptions.Add(i.ToString(),new MenuOption(i.ToString(),allTextures[i.ToString()], new Vector2(20, i * 100)));
+            int h = 0;
+            int v = 1;
+            for (int i = 0; i < 14; i++)
+            {
+
+                h++;
+                if(GraphicsDevice.Viewport.Bounds.Contains((new Vector2(75 * h, 50 * v)))){
+                    
+                }
+                else
+                {
+
+                    v++;
+                }
+
+                allMenuOptions.Add(i.ToString(), new MenuOption(i.ToString(), allTextures[i.ToString()], new Vector2(75 * h, 25 * v)));
             }
         }
     }
