@@ -17,6 +17,7 @@ namespace TaskWeek7
         public Texture2D texture;
         public Vector2 pos;
         public Rectangle bounds;
+        SoundEffectInstance player = null;
         public MenuOption(string SoundKey, Texture2D Texture, Vector2 Position)
         {
             soundKey = SoundKey;
@@ -28,14 +29,17 @@ namespace TaskWeek7
         public void Update()
         {
 
-            if (InputEngine.IsMouseLeftClick())
-            {
-                string n = "";
-                if (InputEngine.CurrentMouseState.Position.soundKey) != "")
-                {
-                    AudioManager.Play(ref player, n);
-                }
+            PlaySound();
+        }
 
+
+        public void PlaySound()
+        {
+            if (InputEngine.IsMouseLeftClick() && bounds.Contains(InputEngine.CurrentMouseState.Position))
+            {
+                //Console.WriteLine("Doing this");
+
+                AudioManager.Play(ref player, soundKey);
             }
         }
         public void Draw(SpriteBatch spritebatch)

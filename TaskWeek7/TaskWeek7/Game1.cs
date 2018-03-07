@@ -79,7 +79,10 @@ namespace TaskWeek7
 
             // TODO: Add your update logic here
 
-
+            foreach (MenuOption item in allMenuOptions)
+            {
+                item.Update();
+            }
             
             base.Update(gameTime);
         }
